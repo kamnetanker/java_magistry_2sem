@@ -1,13 +1,15 @@
 package com.aleksandrov_v_i;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
         // ===== part 1 =====
+
         BookDemo bd = new BookDemo();
         bd.do_something();
+
         // ===== part 1 end =====
 
         // ===== part 2 =====
