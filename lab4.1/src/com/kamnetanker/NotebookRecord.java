@@ -1,4 +1,4 @@
 package com.kamnetanker;
 
-public class NotebookRecord {
+public record NotebookRecord(String _brend,double _price,Processor _processor) {
 }
