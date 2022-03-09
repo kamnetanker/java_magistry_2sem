@@ -2,7 +2,7 @@ package com.kamnetanker;
 
 import java.util.Objects;
 
-public class Notebook {
+public class Notebook implements Comparable<Notebook> {
     // ==== data begin ====
     private String _brend;
     private double _price;
@@ -65,6 +65,11 @@ public class Notebook {
                 ", _processor=" + _processor +
                 '}';
     }
-
     // ==== POJO end ====
+
+    @Override
+    public int compareTo(Notebook o) {
+        return this._brend.compareTo(o._brend);
+    }
+
 }
