@@ -47,6 +47,8 @@ public class NotebookDemo {
     // ==== business logic begin ====
     private void PerformClass(){
         List<Notebook> _nbList = new ArrayList<Notebook>(List.of(this._nbArray));
+        Collections.sort(_nbList);
+        PrintClass(_nbList);
         Collections.sort(_nbList, new ComparablePriceNotebook());
         PrintClass(_nbList);
         Collections.sort(_nbList, new ComparableProcessorNotebook());
@@ -59,6 +61,8 @@ public class NotebookDemo {
     }
     private void PerformRecord(){
         List<NotebookRecord> _nbrList = new ArrayList<NotebookRecord>(List.of(this._nbrArray));
+        Collections.sort(_nbrList);
+        PrintRecord(_nbrList);
         Collections.sort(_nbrList, new ComparablePriceNotebookRecord());
         PrintRecord(_nbrList);
         Collections.sort(_nbrList, new ComparableProcessorNotebookRecord());
