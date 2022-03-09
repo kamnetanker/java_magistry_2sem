@@ -1,6 +1,6 @@
 package com.kamnetanker;
 
-import java.util.Objects;
+import java.util.*;
 
 public class NotebookDemo {
     // ==== data begin ====
@@ -46,19 +46,32 @@ public class NotebookDemo {
     // ==== POJO end ====
     // ==== business logic begin ====
     private void PerformClass(){
-
+        List<Notebook> _nbList = new ArrayList<Notebook>(List.of(this._nbArray));
+        Collections.sort(_nbList, new ComparablePriceNotebook());
+        PrintClass(_nbList);
+        Collections.sort(_nbList, new ComparableProcessorNotebook());
+        PrintClass(_nbList);
     }
-    private void PrintClass(){
-
+    private void PrintClass( List<Notebook> _nbList ){
+        for(Notebook n : _nbList){
+            System.out.println(n.toString());
+        }
     }
     private void PerformRecord(){
-
+        List<NotebookRecord> _nbrList = new ArrayList<NotebookRecord>(List.of(this._nbrArray));
+        Collections.sort(_nbrList, new ComparablePriceNotebookRecord());
+        PrintRecord(_nbrList);
+        Collections.sort(_nbrList, new ComparableProcessorNotebookRecord());
+        PrintRecord(_nbrList);
     }
-    private void PrintRecord(){
-
+    private void PrintRecord(List<NotebookRecord> _nbrList){
+        for(NotebookRecord n : _nbrList){
+            System.out.println(n.toString());
+        }
     }
     public void Perform(){
-
+        PerformClass();
+        PerformRecord();
     }
     // ==== business logic end ====
 }
