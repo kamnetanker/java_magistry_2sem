@@ -8,9 +8,9 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class ToBeTested_parametrized {
+public class TestToBeTested_parametrized {
     private int[] a,b,c;
-    ToBeTested_parametrized(int[] a, int[]b,int[]c){
+    public TestToBeTested_parametrized(int[] a, int[]b, int[]c){
         this.a=a;
         this.b=b;
         this.c=c;

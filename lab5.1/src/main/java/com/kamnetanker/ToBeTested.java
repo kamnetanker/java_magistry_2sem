@@ -1,6 +1,9 @@
 package com.kamnetanker;
 
 public class ToBeTested {
+    public  ToBeTested(){
+
+    }
     public static int[] method1(int[] a, int[] b) throws Exception {
         if (a.length != b.length) throw new Exception("Arrays must have equal length");
         int[] c = new int[a.length];
