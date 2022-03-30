@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="TestToBeTested_parametrized" time="0.001" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="TestToBeTested_parametrized" time="0.011" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2021.3.2"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -60,7 +60,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="TestToBeTested_parametrized" name="testMethod1[0]" time="0.001"/>
+  <testcase classname="TestToBeTested_parametrized" name="testMethod1[0]" time="0.011"/>
   <testcase classname="TestToBeTested_parametrized" name="testMethod1[1]" time="0"/>
   <testcase classname="TestToBeTested_parametrized" name="testMethod1[2]" time="0"/>
   <testcase classname="TestToBeTested_parametrized" name="testMethod1[3]" time="0"/>
