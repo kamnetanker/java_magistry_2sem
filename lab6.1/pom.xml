@@ -7,12 +7,80 @@
     <groupId>com.kamnetanker</groupId>
     <artifactId>lab6.1</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <start-class>com.kamnetanker.MainClass</start-class>
     </properties>
     <dependencies>
-
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>3.3.0</version>
+        </dependency>
     </dependencies>
+     <build>
+         <plugins>
+             <plugin>
+                 <artifactId>maven-assembly-plugin</artifactId>
+                 <configuration>
+                     <archive>
+                         <manifest>
+                             <mainClass>com.kamnetanker.MainClass</mainClass>
+                         </manifest>
+                     </archive>
+                     <descriptorRefs>
+                         <descriptorRef>jar-with-dependencies</descriptorRef>
+                     </descriptorRefs>
+                 </configuration>
+             </plugin>
+             <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-dependency-plugin</artifactId>
+                 <version>3.3.0</version>
+                 <executions>
+                     <execution>
+                         <id>copy-dependencies</id>
+                         <phase>prepare-package</phase>
+                         <goals>
+                             <goal>copy-dependencies</goal>
+                         </goals>
+                         <configuration>
+                             <outputDirectory>
+                                 ${project.build.directory}/libs
+                             </outputDirectory>
+                         </configuration>
+                     </execution>
+                 </executions>
+             </plugin>
+             <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-jar-plugin</artifactId>
+                 <version>3.2.2</version>
+                 <configuration>
+                     <archive>
+                         <manifest>
+                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                             <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                             <addClasspath>true</addClasspath>
+                             <mainClass>com.kamnetanker.MainClass</mainClass>
+                         </manifest>
+                     </archive>
+                 </configuration>
+             </plugin>
+         </plugins>
+     </build>
 </project>
