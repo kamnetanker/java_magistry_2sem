@@ -47,6 +47,18 @@ class Book{
         this.authors = authors;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Book)) return false;
+        Book book = (Book) o;
+        return getTitle().equals(book.getTitle()) && getPubYear().equals(book.getPubYear()) && getAuthors().equals(book.getAuthors());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getTitle(), getPubYear(), getAuthors());
+    }
 }
 public class App 
 {
@@ -126,7 +138,7 @@ public class App
         });
         System.out.println(map_Entry_si.toString());
 
-        
+
         Set<String> authors_unique = new HashSet<>();
         ib = al_book.iterator();
         while(ib.hasNext()){
